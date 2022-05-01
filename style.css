@@ -1,65 +1,67 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f8f8f8;
+  height: 100vh;
+  background: linear-gradient(#e92e3d, #ff6e6a) 0 100% no-repeat;
+  background-size: 100% 50%;
 }
 
-.card {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.card span {
+.container {
+  width: 400px;
+  padding: 50px;
+  /* border: 1px solid black; */
   position: absolute;
-  top: -10px;
-  left: -10px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 15px 35px rgba(50, 50, 50, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.dice-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+p {
+  font-size: 16px;
+  margin: 30px 0;
+  font-weight: 500;
+}
+
+button {
+  background-color: #e92e3d;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 15px 0;
   width: 150px;
-  height: 150px;
-  /* background: #f00; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  letter-spacing: 1px;
+  border-radius: 5px;
 }
 
-.card span::before {
-  content: "Best Value";
-  position: absolute;
-  width: 150%;
-  height: 40px;
-  background: #62baea;
-  transform: rotate(-45deg) translateY(-20px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.1em;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+.shake {
+  animation: shake 0.5s infinite;
 }
 
-.card span::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background: #4a98bf;
-  z-index: -1;
-  box-shadow: 140px -140px #4a98bf;
+@keyframes shake {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
 }
